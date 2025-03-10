@@ -77,7 +77,7 @@ const AdvancedSettings = ({
                     {cancelable: false},
                 );
             }
-        } catch (e) {
+        } catch {
             //do nothing
         }
     });

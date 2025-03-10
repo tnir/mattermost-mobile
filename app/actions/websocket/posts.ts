@@ -342,7 +342,7 @@ export async function handlePostAcknowledgementAdded(serverUrl: string, msg: Web
 
         addPostAcknowledgement(serverUrl, post_id, user_id, acknowledged_at);
         fetchMissingProfilesByIds(serverUrl, [user_id]);
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }
@@ -360,7 +360,7 @@ export async function handlePostAcknowledgementRemoved(serverUrl: string, msg: W
             return;
         }
         await removePostAcknowledgement(serverUrl, post_id, user_id);
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }

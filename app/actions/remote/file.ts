@@ -56,7 +56,7 @@ export const buildFileUrl = (serverUrl: string, fileId: string, timestamp = 0) =
     let client: Client;
     try {
         client = NetworkManager.getClient(serverUrl);
-    } catch (error) {
+    } catch {
         return '';
     }
 
@@ -67,7 +67,7 @@ export const buildAbsoluteUrl = (serverUrl: string, relativePath: string) => {
     let client: Client;
     try {
         client = NetworkManager.getClient(serverUrl);
-    } catch (error) {
+    } catch {
         return '';
     }
 
@@ -78,7 +78,7 @@ export const buildFilePreviewUrl = (serverUrl: string, fileId: string, timestamp
     let client: Client;
     try {
         client = NetworkManager.getClient(serverUrl);
-    } catch (error) {
+    } catch {
         return '';
     }
 
@@ -89,7 +89,7 @@ export const buildFileThumbnailUrl = (serverUrl: string, fileId: string, timesta
     let client: Client;
     try {
         client = NetworkManager.getClient(serverUrl);
-    } catch (error) {
+    } catch {
         return '';
     }
 

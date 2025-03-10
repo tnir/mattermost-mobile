@@ -103,7 +103,7 @@ const VideoFile = ({
                     }
                 }
             }
-        } catch (error) {
+        } catch {
             data.mini_preview = buildFilePreviewUrl(serverUrl, data.id!);
             if (mounted.current) {
                 setVideo(data);

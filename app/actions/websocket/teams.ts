@@ -115,7 +115,7 @@ export async function handleUpdateTeamEvent(serverUrl: string, msg: WebSocketMes
             teams: [team],
             prepareRecordsOnly: false,
         });
-    } catch (err) {
+    } catch {
         // Do nothing
     }
 }
@@ -135,7 +135,7 @@ export async function handleUserAddedToTeamEvent(serverUrl: string, msg: WebSock
         const {teams, memberships: teamMemberships} = await fetchMyTeam(serverUrl, teamId, true);
 
         await fetchAndStoreJoinedTeamInfo(serverUrl, operator, teamId, teams, teamMemberships);
-    } catch (error) {
+    } catch {
         logDebug('could not handle user added to team websocket event');
     }
     setTeamLoading(serverUrl, false);

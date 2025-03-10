@@ -11,7 +11,7 @@ class NavigationStoreSingleton {
     private visibleTab = 'Home';
     private tosOpen = false;
 
-    private subject: BehaviorSubject<AvailableScreens|undefined> = new BehaviorSubject(undefined);
+    private subject = new BehaviorSubject<AvailableScreens|undefined>(undefined);
 
     getSubject = () => {
         return this.subject;

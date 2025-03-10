@@ -7,7 +7,7 @@ type State = {[id: string]: boolean};
 
 const defaultState: State = {};
 
-export const subject: BehaviorSubject<State> = new BehaviorSubject(defaultState);
+export const subject = new BehaviorSubject<State>(defaultState);
 
 export const setFetchingThreadState = (rootId: string, isFetching: boolean) => {
     const prevState = subject.value;

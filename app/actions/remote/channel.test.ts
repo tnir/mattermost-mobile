@@ -415,6 +415,7 @@ describe('channel', () => {
         } as ChannelMembership],
         prepareRecordsOnly: false});
 
+        // eslint-disable-next-line @typescript-eslint/no-empty-object-type
         const result = await joinChannelIfNeeded(serverUrl, channelId) as {};
         expect(result).toBeDefined();
         expect(result).not.toHaveProperty('channel');
@@ -434,6 +435,7 @@ describe('channel', () => {
     });
 
     it('switchToChannelByName - handle not found database', async () => {
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         const {error} = await switchToChannelByName('foo', '', '', () => {}, intl);
         expect(error).toBeDefined();
     });
@@ -441,6 +443,7 @@ describe('channel', () => {
     it('switchToChannelByName - base case', async () => {
         await operator.handleSystem({systems: [{id: SYSTEM_IDENTIFIERS.CURRENT_USER_ID, value: user.id}, {id: SYSTEM_IDENTIFIERS.CURRENT_TEAM_ID, value: teamId}], prepareRecordsOnly: false});
 
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         const result = await switchToChannelByName(serverUrl, 'channelname', 'teamname', () => {}, intl);
         expect(result).toBeDefined();
         expect(result).not.toHaveProperty('error');
@@ -449,6 +452,7 @@ describe('channel', () => {
     it('switchToChannelByName - team redirect', async () => {
         await operator.handleSystem({systems: [{id: SYSTEM_IDENTIFIERS.CURRENT_USER_ID, value: user.id}, {id: SYSTEM_IDENTIFIERS.CURRENT_TEAM_ID, value: teamId}], prepareRecordsOnly: false});
 
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         const result = await switchToChannelByName(serverUrl, 'channelname', DeepLink.Redirect, () => {}, intl);
         expect(result).toBeDefined();
         expect(result).not.toHaveProperty('error');

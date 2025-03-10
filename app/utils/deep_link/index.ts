@@ -242,7 +242,7 @@ export function parseDeepLink(deepLinkUrl: string, asServer = false): DeepLinkWi
                 return {type: DeepLink.Server, url: deepLinkUrl, data: {serverUrl: serverMatch}};
             }
         }
-    } catch (err) {
+    } catch {
         // do nothing just return invalid deeplink
     }
 

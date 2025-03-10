@@ -60,7 +60,7 @@ class ServerScreen {
                     // # Tap alert okay button
                     await waitFor(Alert.okayButton).toExist().withTimeout(timeouts.TEN_SEC);
                     await Alert.okayButton.tap();
-                } catch (error) {
+                } catch {
                     /* eslint-disable no-console */
                     console.log('Alert button did not appear!');
                 }

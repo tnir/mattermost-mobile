@@ -96,7 +96,7 @@ export const getServerCredentials = async (serverUrl: string): Promise<ServerCre
         }
 
         return null;
-    } catch (e) {
+    } catch {
         return null;
     }
 };

@@ -481,6 +481,7 @@ const ImageTransformer = (
         offset.y.value = withTiming(target.y, timingConfig);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
     const onDoubleTapEvent = useAnimatedGestureHandler<TapGestureHandlerGestureEvent, {}>({
         shouldHandleEvent: (evt) => {
             return (

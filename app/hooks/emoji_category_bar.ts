@@ -23,7 +23,7 @@ const defaultState: EmojiCategoryBar = {
     skinTone: 'default',
 };
 
-const subject: BehaviorSubject<EmojiCategoryBar> = new BehaviorSubject(defaultState);
+const subject = new BehaviorSubject<EmojiCategoryBar>(defaultState);
 
 const getEmojiCategoryBarState = () => {
     return subject.value;

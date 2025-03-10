@@ -131,7 +131,7 @@ const Thread = ({author, channel, location, post, teammateNameDisplay, testID, t
     const textStyles = getMarkdownTextStyles(theme);
     const serverUrl = useServerUrl();
 
-    const [isChannelNamePressed, setIsChannelNamePressed] = useState<Boolean>(false);
+    const [isChannelNamePressed, setIsChannelNamePressed] = useState<boolean>(false);
 
     const channelNameStyle = useMemo(() => (
         [styles.channelName, isChannelNamePressed ? {color: theme.buttonBg} : null]

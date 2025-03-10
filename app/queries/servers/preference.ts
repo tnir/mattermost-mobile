@@ -50,7 +50,7 @@ export const getThemeForCurrentTeam = async (database: Database): Promise<Theme 
     return undefined;
 };
 
-export async function deletePreferences(database: ServerDatabase, preferences: PreferenceType[]): Promise<Boolean> {
+export async function deletePreferences(database: ServerDatabase, preferences: PreferenceType[]): Promise<boolean> {
     try {
         const preparedModels: Model[] = [];
         for await (const pref of preferences) {
@@ -63,7 +63,7 @@ export async function deletePreferences(database: ServerDatabase, preferences: P
             await database.operator.batchRecords(preparedModels, 'deletePreferences');
         }
         return true;
-    } catch (error) {
+    } catch {
         return false;
     }
 }

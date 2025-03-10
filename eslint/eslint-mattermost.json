@@ -22,6 +22,7 @@
     "es6": true
   },
   "rules": {
+    "@typescript-eslint/no-empty-function": 2,
     "array-bracket-spacing": [
       2,
       "never"
@@ -220,7 +221,6 @@
     ],
     "no-else-return": 2,
     "no-empty": 2,
-    "no-empty-function": 2,
     "no-empty-pattern": 2,
     "no-eval": 2,
     "no-ex-assign": 2,
@@ -475,8 +475,8 @@
       }
     ],
     "@typescript-eslint/array-type": [2, {"default": "array-simple"}],
-    "@typescript-eslint/member-delimiter-style": 2,
-    "@typescript-eslint/type-annotation-spacing": 2
+    "@stylistic/ts/member-delimiter-style": 2,
+    "@stylistic/ts/type-annotation-spacing": 2
   },
   "overrides": [
     {
@@ -495,7 +495,7 @@
         "test": true
       },
       "rules": {
-        "no-empty-function": 0,
+        "@typescript-eslint/no-empty-function": 0,
         "no-console": 0,
         "max-nested-callbacks": 0,
         "no-undefined": 0

@@ -26,7 +26,7 @@ type Props = {
 
 const HOME_TOTAL_MENTIONS_EVENT = 'home_total_mentions_event';
 
-const subscriptions: Map<string, UnreadSubscription> = new Map();
+const subscriptions = new Map<string, UnreadSubscription>();
 
 const style = StyleSheet.create({
     unread: {

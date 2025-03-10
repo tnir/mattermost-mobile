@@ -122,7 +122,7 @@ const ReviewApp = ({
             await dismissOverlay(componentId);
             try {
                 await requestReview();
-            } catch (error) {
+            } catch {
                 Alert.alert(
                     intl.formatMessage({id: 'rate.error.title', defaultMessage: 'Error'}),
                     intl.formatMessage({id: 'rate.error.text', defaultMessage: 'There has been an error while opening the review modal.'}),

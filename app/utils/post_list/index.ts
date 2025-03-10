@@ -57,8 +57,7 @@ function combineUserActivityPosts(orderedPosts: PostList) {
     const out: PostList = [];
     let changed = false;
 
-    for (let i = 0; i < orderedPosts.length; i++) {
-        const item = orderedPosts[i];
+    for (const item of orderedPosts) {
         if (item.type === 'start-of-new-messages' || item.type === 'date' || item.type === 'thread-overview') {
             // Not a post, so it won't be combined
             out.push(item);

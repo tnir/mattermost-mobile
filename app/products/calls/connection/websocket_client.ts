@@ -127,7 +127,7 @@ export class WebSocketClient extends EventEmitter {
         return this.init(false);
     }
 
-    send(action: string, data?: Object, binary?: boolean) {
+    send(action: string, data?: object, binary?: boolean) {
         const msg = {
             action: `${this.eventPrefix}_${action}`,
             seq: this.seqNo++,

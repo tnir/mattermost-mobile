@@ -4,6 +4,7 @@
 import {throttle} from 'lodash';
 import {useMemo, useRef} from 'react';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 const useThrottled = (callback: Function, time: number) => {
     const callbackRef = useRef(callback);
 

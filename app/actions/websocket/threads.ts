@@ -20,7 +20,7 @@ export async function handleThreadUpdatedEvent(serverUrl: string, msg: WebSocket
         // Mark it as following
         thread.is_following = true;
         processReceivedThreads(serverUrl, [thread], teamId);
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }
@@ -45,7 +45,7 @@ export async function handleThreadReadChangedEvent(serverUrl: string, msg: WebSo
         } else {
             await markTeamThreadsAsRead(serverUrl, msg.broadcast.team_id);
         }
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }
@@ -61,7 +61,7 @@ export async function handleThreadFollowChangedEvent(serverUrl: string, msg: Web
             is_following: state,
             reply_count,
         });
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }

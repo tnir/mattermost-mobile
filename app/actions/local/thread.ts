@@ -202,15 +202,15 @@ export async function processReceivedThreads(serverUrl: string, threads: Thread[
         const threadsToHandle: ThreadWithLastFetchedAt[] = [];
 
         // Extract posts & users from the received threads
-        for (let i = 0; i < threads.length; i++) {
-            const {participants, post} = threads[i];
+        for (const thread of threads) {
+            const {participants, post} = thread;
             posts.push(post);
             participants.forEach((participant) => {
                 if (currentUserId !== participant.id) {
                     users.push(participant);
                 }
             });
-            threadsToHandle.push({...threads[i], lastFetchedAt: post.create_at});
+            threadsToHandle.push({...thread, lastFetchedAt: post.create_at});
         }
 
         const postModels = await operator.handlePosts({

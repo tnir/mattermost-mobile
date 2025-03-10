@@ -58,7 +58,7 @@ function leftMergeDirs(rootA, rootB, dest, path) {
             let fileB = null;
             try {
                 fileB = fs.readFileSync(filePathB);
-            } catch (e) {
+            } catch {
                 // do nothing
             }
 
@@ -86,8 +86,8 @@ function leftMergeDirs(rootA, rootB, dest, path) {
 
 const rmdir = (path) => {
     const list = fs.readdirSync(path);
-    for (let i = 0; i < list.length; i++) {
-        const filename = fsPath.join(path, list[i]);
+    for (const item of list) {
+        const filename = fsPath.join(path, item);
         const stat = fs.statSync(filename);
 
         if (stat.isDirectory()) {

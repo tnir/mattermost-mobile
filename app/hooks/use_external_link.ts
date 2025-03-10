@@ -26,7 +26,7 @@ export function useExternalLink(
         isCloud,
     }: StateProps,
     href: string,
-    location: string = '',
+    location = '',
     overwriteQueryParams: ExternalLinkQueryParams = {},
 ): [string, Record<string, string>] {
     return useMemo(() => {

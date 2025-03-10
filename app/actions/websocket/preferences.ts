@@ -35,7 +35,7 @@ export async function handlePreferenceChangedEvent(serverUrl: string, msg: WebSo
         if (crtToggled) {
             handleCRTToggled(serverUrl);
         }
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }
@@ -65,7 +65,7 @@ export async function handlePreferencesChangedEvent(serverUrl: string, msg: WebS
         if (crtToggled) {
             handleCRTToggled(serverUrl);
         }
-    } catch (error) {
+    } catch {
         // Do nothing
     }
 }

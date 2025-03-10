@@ -31,6 +31,7 @@ jest.mock('@actions/local/post', () => ({
 import type {PostModel} from '@database/models/server';
 import type Database from '@nozbe/watermelondb/Database';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const {PostListProps} = exportedForTesting;
 
 describe('components/post_list/PostList', () => {

@@ -27,7 +27,7 @@ export type ServersRef = {
 
 export const SERVER_ITEM_HEIGHT = 75;
 export const PUSH_ALERT_TEXT_HEIGHT = 42;
-const subscriptions: Map<string, UnreadSubscription> = new Map();
+const subscriptions = new Map<string, UnreadSubscription>();
 
 const styles = StyleSheet.create({
     icon: {

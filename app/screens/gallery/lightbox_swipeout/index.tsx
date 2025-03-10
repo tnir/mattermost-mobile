@@ -143,6 +143,7 @@ const LightboxSwipeout = forwardRef<LightboxSwipeoutRef, LightboxSwipeoutProps>(
     };
 
     const handler = useCallback(
+        // eslint-disable-next-line @typescript-eslint/no-empty-object-type
         useCreateAnimatedGestureHandler<PanGestureHandlerGestureEvent, {}>({
             shouldHandleEvent: (evt) => {
                 'worklet';

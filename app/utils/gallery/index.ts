@@ -112,7 +112,7 @@ export function measureItem(ref: AnimatedRef<any>, sharedValues: GalleryManagerS
         sharedValues.y.value = measurements?.pageY || 999999;
         sharedValues.width.value = measurements?.width || 0;
         sharedValues.height.value = measurements?.height || 0;
-    } catch (err) {
+    } catch {
         sharedValues.x.value = 999999;
         sharedValues.y.value = 999999;
         sharedValues.width.value = 0;

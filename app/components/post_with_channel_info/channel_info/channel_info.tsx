@@ -56,7 +56,7 @@ function ChannelInfo({channelId, channelName, teamName, testID}: Props) {
     const styles = getStyleSheet(theme);
     const serverUrl = useServerUrl();
 
-    const [isPressed, setIsPressed] = useState<Boolean>(false);
+    const [isPressed, setIsPressed] = useState<boolean>(false);
 
     const channelNameStyle = useMemo(() => (
         [styles.channel, isPressed ? {color: theme.buttonBg} : null]

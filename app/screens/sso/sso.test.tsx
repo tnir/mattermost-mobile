@@ -42,7 +42,7 @@ describe('SSO with redirect url', () => {
         let browser;
         try {
             browser = getByTestId('mobile.oauth.switch_to_browser');
-        } catch (error) {
+        } catch {
             // do nothing
         }
         expect(browser).toBeUndefined();

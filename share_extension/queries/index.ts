@@ -21,7 +21,7 @@ export const queryHasChannels = (serverUrl: string) => {
             INNER JOIN Team t ON c.team_id=t.id',
             ),
         );
-    } catch (e) {
+    } catch {
         return undefined;
     }
 };

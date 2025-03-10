@@ -130,9 +130,7 @@ function populateMaps() {
 
         extensions[type] = exts;
 
-        for (let i = 0; i < exts.length; i++) {
-            const extension = exts[i];
-
+        for (const extension of exts) {
             if (types[extension]) {
                 const from = preference.indexOf(mimeDB[types[extension]].source);
                 const to = preference.indexOf(mime.source);
@@ -166,7 +164,7 @@ export async function deleteV1Data() {
         if (entitiesInfo.exists) {
             deleteEntitiesFile();
         }
-    } catch (e) {
+    } catch {
         // do nothing
     }
 }

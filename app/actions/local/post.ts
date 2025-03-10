@@ -245,7 +245,7 @@ export async function getPosts(serverUrl: string, ids: string[], sort?: Q.SortOr
     try {
         const {database} = DatabaseManager.getServerDatabaseAndOperator(serverUrl);
         return queryPostsById(database, ids, sort).fetch();
-    } catch (error) {
+    } catch {
         return [];
     }
 }
@@ -348,7 +348,7 @@ export function getUsersCountFromMentions(serverUrl: string, mentions: string[])
     try {
         const {database} = DatabaseManager.getServerDatabaseAndOperator(serverUrl);
         return countUsersFromMentions(database, mentions);
-    } catch (error) {
+    } catch {
         return Promise.resolve(0);
     }
 }

@@ -223,9 +223,9 @@ function generateTestReport(summary, isUploadedToS3, reportLink, environment, te
     } = environment;
 
     let testResult;
-    for (let i = 0; i < result.length; i++) {
-        if (stats.passPercent >= result[i].cutOff) {
-            testResult = result[i];
+    for (const res of result) {
+        if (stats.passPercent >= res.cutOff) {
+            testResult = res;
             break;
         }
     }

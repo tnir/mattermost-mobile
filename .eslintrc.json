@@ -2,13 +2,14 @@
   "extends": [
     "./eslint/eslint-mattermost",
     "./eslint/eslint-react",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic",
     "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
+    "@stylistic/ts",
     "import"
   ],
   "settings": {
@@ -38,7 +39,10 @@
       }
     ],
     "@typescript-eslint/ban-types": 0,
+    "@typescript-eslint/consistent-indexed-object-style": 0,
+    "@typescript-eslint/consistent-type-definitions": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/no-require-imports": 0,
     "@typescript-eslint/no-unused-vars": [
       2,
       {
@@ -60,7 +64,7 @@
         "beforeColon": false,
         "afterColon": true
       }}],
-    "@typescript-eslint/member-delimiter-style": 2,
+    "@stylistic/ts/member-delimiter-style": 2,
     "@typescript-eslint/no-unsafe-declaration-merging": "off",
     "import/order": [
       2,

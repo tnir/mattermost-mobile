@@ -798,7 +798,7 @@ export const buildProfileImageUrl = (serverUrl: string, userId: string, timestam
     try {
         const client = NetworkManager.getClient(serverUrl);
         return client.getProfilePictureUrl(userId, timestamp);
-    } catch (error) {
+    } catch {
         return '';
     }
 };

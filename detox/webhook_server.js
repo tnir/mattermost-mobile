@@ -106,7 +106,7 @@ async function postOAuthMessage(req, res) {
                 root_id: rootId,
             },
         });
-    } catch (err) {
+    } catch {
         // Do nothing
     }
     return res.status(200).send('OK');

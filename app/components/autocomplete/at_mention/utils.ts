@@ -215,7 +215,7 @@ export const searchGroups = async (serverUrl: string, matchTerm: string, useGrou
             return g.length ? g : emptyGroupList;
         }
         return emptyGroupList;
-    } catch (error) {
+    } catch {
         return emptyGroupList;
     }
 };

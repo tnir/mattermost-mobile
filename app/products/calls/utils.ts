@@ -129,8 +129,8 @@ export function idsAreEqual(a: string[], b: string[]) {
         return prev;
     }, {} as Record<string, boolean>);
 
-    for (let i = 0; i < b.length; i++) {
-        if (!obj.hasOwnProperty(b[i])) {
+    for (const id of b) {
+        if (!obj.hasOwnProperty(id)) {
             return false;
         }
     }

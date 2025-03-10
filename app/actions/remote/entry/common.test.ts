@@ -863,6 +863,7 @@ describe('actions/remote/entry/common', () => {
         });
 
         it('should handle error gracefully', async () => {
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             const consoleDebugSpy = jest.spyOn(console, 'debug').mockImplementation(() => {});
             (DatabaseManager.getServerDatabaseAndOperator as jest.Mock).mockImplementation(() => {
                 throw new Error('Test error');

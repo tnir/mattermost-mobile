@@ -130,7 +130,7 @@ class ManagedAppSingleton {
                 if (!auth) {
                     throw new Error('Authorization cancelled');
                 }
-            } catch (err) {
+            } catch {
                 Emm.exitApp();
                 return;
             }

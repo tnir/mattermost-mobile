@@ -22,13 +22,9 @@ export type UnreadObserverArgs = {
     threadMentionCount: number;
 }
 
-type ServerUnreadObserver = {
-    (serverUrl: string, {myChannels, settings, threadMentionCount, threadUnreads}: UnreadObserverArgs): void;
-}
+type ServerUnreadObserver = (serverUrl: string, {myChannels, settings, threadMentionCount, threadUnreads}: UnreadObserverArgs) => void
 
-type UnreadObserver = {
-    ({myChannels, settings, threadMentionCount, threadUnreads}: UnreadObserverArgs): void;
-}
+type UnreadObserver = ({myChannels, settings, threadMentionCount, threadUnreads}: UnreadObserverArgs) => void
 
 export const subscribeServerUnreadAndMentions = (serverUrl: string, observer: UnreadObserver) => {
     const server = DatabaseManager.serverDatabases[serverUrl];

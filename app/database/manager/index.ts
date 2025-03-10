@@ -461,7 +461,7 @@ class DatabaseManagerSingleton {
             await moveAsync({from: databaseFile, to: newDatabaseFile});
             await moveAsync({from: databaseShm, to: newDatabaseShm});
             await moveAsync({from: databaseWal, to: newDatabaseWal});
-        } catch (error) {
+        } catch {
             // Do nothing
         }
     };
@@ -483,7 +483,7 @@ class DatabaseManagerSingleton {
             const androidFilesDir = `${this.databaseDirectory}databases/`;
             await deleteAsync(androidFilesDir);
             return true;
-        } catch (e) {
+        } catch {
             return false;
         }
     };

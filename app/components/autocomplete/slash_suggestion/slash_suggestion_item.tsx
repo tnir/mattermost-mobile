@@ -137,7 +137,7 @@ const SlashSuggestionItem = ({
                         height={32}
                     />
                 );
-            } catch (error) {
+            } catch {
                 // Do nothing
             }
         } else {

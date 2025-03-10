@@ -67,7 +67,7 @@ export const addChannelToTeamHistory = async (operator: ServerDataOperator, team
             id: teamId,
             channel_ids: channelIds.slice(0, 5),
         };
-    } catch (e) {
+    } catch {
         tch = {
             id: teamId,
             channel_ids: [channelId],
@@ -238,7 +238,7 @@ export const prepareDeleteTeam = async (team: TeamModel): Promise<Model[]> => {
                 if (model) {
                     preparedModels.push(model.prepareDestroyPermanently());
                 }
-            } catch (error) {
+            } catch {
                 // Record not found, do nothing
             }
         }));
@@ -281,7 +281,7 @@ export const prepareDeleteTeam = async (team: TeamModel): Promise<Model[]> => {
         }
 
         return preparedModels;
-    } catch (error) {
+    } catch {
         return [];
     }
 };
@@ -290,7 +290,7 @@ export const getMyTeamById = async (database: Database, teamId: string) => {
     try {
         const myTeam = (await database.get<MyTeamModel>(MY_TEAM).find(teamId));
         return myTeam;
-    } catch (err) {
+    } catch {
         return undefined;
     }
 };

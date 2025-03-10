@@ -6,7 +6,7 @@ import type {CallChannelState, CallJobState, CallsConfig} from '@mattermost/call
 import type {RTCIceServer} from 'react-native-webrtc';
 
 export interface ClientCallsMix {
-    getEnabled: () => Promise<Boolean>;
+    getEnabled: () => Promise<boolean>;
     getCalls: (groupLabel?: RequestGroupLabel) => Promise<CallChannelState[]>;
     getCallForChannel: (channelId: string) => Promise<CallChannelState>;
     getCallsConfig: (groupLabel?: RequestGroupLabel) => Promise<CallsConfig>;
@@ -33,7 +33,7 @@ const ClientCalls = (superclass: any) => class extends superclass {
                 {method: 'get'},
             );
             return true;
-        } catch (e) {
+        } catch {
             return false;
         }
     };
@@ -65,7 +65,7 @@ const ClientCalls = (superclass: any) => class extends superclass {
                 `${this.getCallsRoute()}/version`,
                 {method: 'get', groupLabel},
             );
-        } catch (e) {
+        } catch {
             return {};
         }
     };

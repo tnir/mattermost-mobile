@@ -72,7 +72,7 @@ const TeamHandler = <TBase extends Constructor<ServerDataOperatorBase>>(supercla
         const existing = await db.get<TeamMembershipModel>(TEAM_MEMBERSHIP).query(
             Q.where('id', Q.oneOf(ids)),
         ).fetch();
-        const membershipMap = new Map<String, TeamMembershipModel>(existing.map((e) => [e.id, e]));
+        const membershipMap = new Map<string, TeamMembershipModel>(existing.map((e) => [e.id, e]));
         const createOrUpdateRawValues = uniqueRaws.reduce((res: TeamMembership[], t) => {
             const e = membershipMap.get(t.id!);
             if (!e && !t.delete_at) {
@@ -122,7 +122,7 @@ const TeamHandler = <TBase extends Constructor<ServerDataOperatorBase>>(supercla
         const existing = await db.get<TeamModel>(TEAM).query(
             Q.where('id', Q.oneOf(ids)),
         ).fetch();
-        const teamMap = new Map<String, TeamModel>(existing.map((e) => [e.id, e]));
+        const teamMap = new Map<string, TeamModel>(existing.map((e) => [e.id, e]));
         const createOrUpdateRawValues = uniqueRaws.reduce((res: Team[], t) => {
             const e = teamMap.get(t.id);
             if (!e && !t.delete_at) {
@@ -224,7 +224,7 @@ const TeamHandler = <TBase extends Constructor<ServerDataOperatorBase>>(supercla
         const existing = await db.get<MyTeamModel>(MY_TEAM).query(
             Q.where('id', Q.oneOf(ids)),
         ).fetch();
-        const myTeamMap = new Map<String, MyTeamModel>(existing.map((e) => [e.id, e]));
+        const myTeamMap = new Map<string, MyTeamModel>(existing.map((e) => [e.id, e]));
         const createOrUpdateRawValues = uniqueRaws.reduce((res: MyTeam[], mt) => {
             const e = myTeamMap.get(mt.id!);
             if (!e) {

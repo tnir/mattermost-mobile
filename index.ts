@@ -12,7 +12,7 @@ import {start} from './app/init/app';
 import setFontFamily from './app/utils/font_family';
 import {logInfo} from './app/utils/log';
 
-declare const global: { HermesInternal: null | {} };
+declare const global: { HermesInternal: null | object };
 
 // Add scaleY back to work around its removal in React Native 0.70.
 ViewReactNativeStyleAttributes.scaleY = true;

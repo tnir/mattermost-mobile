@@ -146,6 +146,7 @@ describe('ClientTracking', () => {
     it('should clear completion timer', () => {
         client.initTrackGroup('Cold Start');
         const group = client.requestGroups.get('Cold Start')!;
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         group.completionTimer = setTimeout(() => {}, 100);
 
         client.clearCompletionTimer('Cold Start');

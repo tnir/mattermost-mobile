@@ -66,7 +66,7 @@ export default class ClientTracking {
     urlVersion = '/api/v4';
     enableLogging = false;
 
-    requestGroups: Map<string, GroupData> = new Map();
+    requestGroups = new Map<string, GroupData>();
 
     constructor(apiClient: APIClientInterface) {
         this.apiClient = apiClient;

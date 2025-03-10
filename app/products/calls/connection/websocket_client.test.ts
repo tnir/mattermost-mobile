@@ -30,9 +30,6 @@ describe('WebSocketClient', () => {
         delete global.WebSocket;
     });
 
-    beforeEach(() => {
-    });
-
     afterEach(() => {
         jest.clearAllMocks();
     });

@@ -499,7 +499,7 @@ export const buildTeamIconUrl = (serverUrl: string, teamId: string, timestamp = 
     try {
         const client = NetworkManager.getClient(serverUrl);
         return client.getTeamIconUrl(teamId, timestamp);
-    } catch (error) {
+    } catch {
         return '';
     }
 };

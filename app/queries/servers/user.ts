@@ -146,7 +146,7 @@ export const getUsersFromDMSorted = async (database: Database, memberIds: string
             INNER JOIN ${MY_CHANNEL} my
             WHERE cm.user_id IN (${`'${memberIds.join("','")}'`})
             ORDER BY my.last_viewed_at DESC`)).fetch();
-    } catch (error) {
+    } catch {
         return [];
     }
 };

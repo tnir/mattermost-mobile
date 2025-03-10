@@ -81,14 +81,14 @@ const DraftOptions: React.FC<Props> = ({
                     isFromDraftView={true}
                     uploadFileError={null}
                     cursorPosition={0}
-                    /* eslint-disable no-empty-function */
+                    /* eslint-disable @typescript-eslint/no-empty-function */
                     clearDraft={() => {}}
                     updateCursorPosition={() => {}}
                     updatePostInputTop={() => {}}
                     addFiles={() => {}}
                     setIsFocused={() => {}}
                     updateValue={() => {}}
-                    /* eslint-enable no-empty-function */
+                    /* eslint-enable @typescript-eslint/no-empty-function */
                 />
                 <DeleteDraft
                     bottomSheetId={Screens.DRAFT_OPTIONS}

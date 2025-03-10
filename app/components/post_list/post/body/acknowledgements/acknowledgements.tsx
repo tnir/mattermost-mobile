@@ -118,7 +118,7 @@ const Acknowledgements = ({currentUserId, currentUserTimezone, hasReactions, loc
 
         try {
             fetchMissingProfilesByIds(serverUrl, userIds);
-        } catch (e) {
+        } catch {
             return;
         }
 

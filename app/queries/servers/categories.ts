@@ -49,7 +49,7 @@ export async function prepareCategoriesAndCategoriesChannels(operator: ServerDat
         const models = await Promise.all(modelPromises);
         const flattenedModels = models.flat();
 
-        const teamIdToChannelIds = new Map<String, Set<String>>();
+        const teamIdToChannelIds = new Map<string, Set<string>>();
         categories.forEach((category) => {
             const value = teamIdToChannelIds.get(category.team_id) || new Set();
             category.channel_ids.forEach(value.add, value);
@@ -111,7 +111,7 @@ export async function prepareCategoryChannels(
         });
 
         return operator.handleCategoryChannels({categoryChannels, prepareRecordsOnly: true});
-    } catch (e) {
+    } catch {
         return [];
     }
 }

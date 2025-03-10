@@ -209,7 +209,7 @@ const ChannelMention = ({
                 if (user) {
                     mention = `@${user.username}`;
                 }
-            } catch (err) {
+            } catch {
                 // Do nothing
             }
         }

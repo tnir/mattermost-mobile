@@ -127,6 +127,7 @@ describe('actions/remote/file', () => {
             const onProgress = jest.fn();
             const onComplete = jest.fn();
             const onError = jest.fn();
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             mockClient.uploadAttachment.mockReturnValue(() => {});
 
             const result = uploadFile(serverUrl, file, channelId, onProgress, onComplete, onError);
@@ -144,6 +145,7 @@ describe('actions/remote/file', () => {
         });
 
         it('should use default callbacks when not provided', () => {
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             mockClient.uploadAttachment.mockReturnValue(() => {});
 
             const result = uploadFile(serverUrl, file, channelId);

@@ -71,6 +71,7 @@ describe('updateLocalCustomStatus', () => {
     it('base case', async () => {
         const userModels = await operator.handleUsers({users: [user], prepareRecordsOnly: false});
         await operator.handleSystem({systems: [{id: SYSTEM_IDENTIFIERS.CURRENT_USER_ID, value: user.id}], prepareRecordsOnly: false});
+        // eslint-disable-next-line @typescript-eslint/no-empty-object-type
         const result = await updateLocalCustomStatus(serverUrl, userModels[0], {text: 'customstatus'}) as {};
         expect(result).toBeDefined();
         expect(result).not.toHaveProperty('error');

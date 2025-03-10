@@ -46,7 +46,7 @@ export type LaunchType = typeof Launch[keyof typeof Launch];
 export interface LaunchProps {
     extra?: DeepLinkWithData | NotificationWithData;
     launchType: LaunchType;
-    launchError?: Boolean;
+    launchError?: boolean;
     serverUrl?: string;
     displayName?: string;
     coldStart?: boolean;

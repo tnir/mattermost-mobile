@@ -128,7 +128,7 @@ export async function retryInitialTeamAndChannel(serverUrl: string) {
         fetchPostsForChannel(serverUrl, initialChannel.id);
 
         return {error: false};
-    } catch (error) {
+    } catch {
         return {error: true};
     }
 }
@@ -206,7 +206,7 @@ export async function retryInitialChannel(serverUrl: string, teamId: string) {
         fetchPostsForChannel(serverUrl, initialChannel.id);
 
         return {error: false};
-    } catch (error) {
+    } catch {
         return {error: true};
     }
 }

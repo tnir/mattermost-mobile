@@ -86,7 +86,7 @@ class DatabaseManagerSingleton {
                 operator,
             };
             return this.appDatabase;
-        } catch (e) {
+        } catch {
             // do nothing
         }
 
@@ -120,7 +120,7 @@ class DatabaseManagerSingleton {
                 this.serverDatabases[serverUrl] = serverDatabase;
 
                 return serverDatabase;
-            } catch (e) {
+            } catch {
                 // do nothing
             }
         }
@@ -159,7 +159,7 @@ class DatabaseManagerSingleton {
                     await this.updateServerIdentifier(serverUrl, identifier);
                 }
             }
-        } catch (e) {
+        } catch {
             // do nothing
         }
     };
@@ -321,7 +321,7 @@ class DatabaseManagerSingleton {
             const androidFilesDir = `${this.databaseDirectory}databases/`;
             await deleteAsync(androidFilesDir);
             return true;
-        } catch (e) {
+        } catch {
             return false;
         }
     };

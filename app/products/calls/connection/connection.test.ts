@@ -152,8 +152,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
         expect(connection).toBeDefined();
@@ -195,8 +197,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
 
@@ -227,8 +231,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             false,
         );
 
@@ -253,8 +259,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             false,
         );
 
@@ -286,6 +294,7 @@ describe('newConnection', () => {
             'http://localhost:8065',
             'channelID',
             mockCloseCb,
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             () => {},
             false,
         );
@@ -321,6 +330,7 @@ describe('newConnection', () => {
             'http://localhost:8065',
             'channelID',
             mockCloseCb,
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             () => {},
             false,
         );
@@ -337,8 +347,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
 
@@ -394,8 +406,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
         expect(connection).toBeDefined();
@@ -479,8 +493,10 @@ describe('newConnection', () => {
         const connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
         expect(connection).toBeDefined();
@@ -535,6 +551,7 @@ describe('newConnection', () => {
         // @ts-ignore
         parseRTCStats.mockImplementation(() => mockRTCStats);
 
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
         newConnection('http://localhost:8065', 'channelID', () => {}, () => {}, false).
             then((connection) => {
                 expect(connection).toBeDefined();
@@ -546,8 +563,10 @@ describe('newConnection', () => {
         let connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
         expect(connection).toBeDefined();
@@ -587,8 +606,10 @@ describe('newConnection', () => {
         connection = await newConnection(
             'http://localhost:8065',
             'channelID',
+            /* eslint-disable @typescript-eslint/no-empty-function */
             () => {},
             () => {},
+            /* eslint-enable @typescript-eslint/no-empty-function */
             true,
         );
         expect(connection).toBeDefined();

@@ -27,7 +27,7 @@ const defaultState: ShareExtensionState = {
     userId: undefined,
 };
 
-const subject: BehaviorSubject<ShareExtensionState> = new BehaviorSubject(defaultState);
+const subject = new BehaviorSubject<ShareExtensionState>(defaultState);
 
 export const getShareExtensionState = () => {
     return subject.value;

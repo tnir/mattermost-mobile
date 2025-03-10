@@ -24,6 +24,7 @@ export interface ClientGeneralMix {
     getChannelDataRetentionPolicies: (userId: string, page?: number, perPage?: number, groupLabel?: RequestGroupLabel) => Promise<PoliciesResponse<ChannelDataRetentionPolicy>>;
     getRolesByNames: (rolesNames: string[], groupLabel?: RequestGroupLabel) => Promise<Role[]>;
     getRedirectLocation: (urlParam: string) => Promise<Record<string, string>>;
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
     sendPerformanceReport: (batch: PerformanceReport) => Promise<{}>;
 }
 

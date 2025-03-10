@@ -72,7 +72,7 @@ export class SessionManagerSingleton {
             values.forEach((cookie: Cookie) => {
                 CookieManager.clearByName(serverUrl, cookie.name, webKit);
             });
-        } catch (error) {
+        } catch {
             // Nothing to clear
         }
     };

@@ -5,6 +5,7 @@ import {useCallback, useRef} from 'react';
 
 const DELAY = 750;
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export const usePreventDoubleTap = <T extends Function>(callback: T) => {
     const lastTapRef = useRef<number | null>(null);
 

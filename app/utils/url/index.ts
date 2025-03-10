@@ -128,9 +128,7 @@ export function isImageLink(link: string) {
         linkWithoutQuery = linkWithoutQuery.split('?')[0];
     }
 
-    for (let i = 0; i < Files.IMAGE_TYPES.length; i++) {
-        const imageType = Files.IMAGE_TYPES[i];
-
+    for (const imageType of Files.IMAGE_TYPES) {
         if (linkWithoutQuery.endsWith('.' + imageType) || linkWithoutQuery.endsWith('=' + imageType)) {
             return true;
         }

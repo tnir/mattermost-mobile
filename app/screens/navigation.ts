@@ -532,7 +532,7 @@ export async function popTopScreen(screenId?: AvailableScreens) {
             const componentId = NavigationStore.getVisibleScreen();
             await Navigation.pop(componentId);
         }
-    } catch (error) {
+    } catch {
         // RNN returns a promise rejection if there are no screens
         // atop the root screen to pop. We'll do nothing in this case.
     }
@@ -543,7 +543,7 @@ export async function popToRoot() {
 
     try {
         await Navigation.popToRoot(componentId);
-    } catch (error) {
+    } catch {
         // RNN returns a promise rejection if there are no screens
         // atop the root screen to pop. We'll do nothing in this case.
     }
@@ -711,7 +711,7 @@ export async function dismissModal(options?: Options & { componentId: AvailableS
     if (componentId) {
         try {
             await Navigation.dismissModal(componentId, options);
-        } catch (error) {
+        } catch {
             // RNN returns a promise rejection if there is no modal to
             // dismiss. We'll do nothing in this case.
         }
@@ -728,7 +728,7 @@ export async function dismissAllModals() {
         for await (const modal of modals) {
             await Navigation.dismissModal(modal, {animations: {dismissModal: {enabled: false}}});
         }
-    } catch (error) {
+    } catch {
         // RNN returns a promise rejection if there are no modals to
         // dismiss. We'll do nothing in this case.
     }
@@ -783,7 +783,7 @@ export function showOverlay(name: AvailableScreens, passProps = {}, options: Opt
 export async function dismissOverlay(componentId: string) {
     try {
         await Navigation.dismissOverlay(componentId);
-    } catch (error) {
+    } catch {
         // RNN returns a promise rejection if there is no modal with
         // this componentId to dismiss. We'll do nothing in this case.
     }

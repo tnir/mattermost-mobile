@@ -44,9 +44,7 @@ export const sanitizeThreadParticipants = async ({database, skipSync, thread_id,
         return result;
     }, {});
 
-    for (let i = 0; i < rawParticipants.length; i++) {
-        const rawParticipant = rawParticipants[i];
-
+    for (const rawParticipant of rawParticipants) {
         // If the participant is not present let's add them to the db
         const exists = participantsMap[rawParticipant.id];
 

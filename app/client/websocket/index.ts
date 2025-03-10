@@ -45,12 +45,12 @@ export default class WebSocketClient {
     private serverSequence = 0;
 
     // Callbacks
-    private eventCallback?: Function;
+    private eventCallback?: (msg: any) => void;
     private firstConnectCallback?: () => void;
     private missedEventsCallback?: () => void;
     private reconnectCallback?: () => void;
     private reliableReconnectCallback?: () => void;
-    private errorCallback?: Function;
+    private errorCallback?: (evt: any) => void;
     private closeCallback?: (connectFailCount: number) => void;
     private connectingCallback?: () => void;
 
@@ -143,7 +143,7 @@ export default class WebSocketClient {
                 return;
             }
             this.conn = client;
-        } catch (error) {
+        } catch {
             return;
         }
 
@@ -306,7 +306,7 @@ export default class WebSocketClient {
         this.connectingCallback = callback;
     }
 
-    public setEventCallback(callback: Function) {
+    public setEventCallback(callback: (msg: any) => void) {
         this.eventCallback = callback;
     }
 
@@ -326,7 +326,7 @@ export default class WebSocketClient {
         this.reliableReconnectCallback = callback;
     }
 
-    public setErrorCallback(callback: Function) {
+    public setErrorCallback(callback: (evt: any) => void) {
         this.errorCallback = callback;
     }
 

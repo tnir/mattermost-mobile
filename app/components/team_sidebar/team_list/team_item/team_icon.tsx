@@ -80,7 +80,7 @@ export default function TeamIcon({
     let client = null;
     try {
         client = NetworkManager.getClient(serverUrl);
-    } catch (err) {
+    } catch {
         // Do nothing
     }
 
